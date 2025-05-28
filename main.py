@@ -10,7 +10,7 @@ Original file is located at
 import sys
 from src.merge import load_and_prepare_data, merge_rides_with_weather
 from src.preprocess import clean_and_extract_features, encode_labels, split_and_balance_data
-from src.training import train_random_forest
+from src.training import train_random_forest, save_model
 from src.testing import evaluate_model
 
 def main(rides_csv, weather_csv):
@@ -25,6 +25,9 @@ def main(rides_csv, weather_csv):
 
     # Train model
     model = train_random_forest(x_train, y_train)
+
+    # Save model and label encoder
+    save_model(model, le)
 
     # Evaluate model
     evaluate_model(model, x_test, y_test, le)

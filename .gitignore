@@ -1,5 +1,6 @@
 # Ignore data files
 data/cab_rides.csv
+model/random_forest_model.pkl
 
 # Ignore system files
 .DS_Store

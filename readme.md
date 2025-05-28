@@ -4,16 +4,18 @@ This project aims to predict surge pricing multipliers for Uber rides using hist
 
 ---
 
-## 📁 Project Structure
-
 ## Project Structure
 
 ```plaintext
 Surge-Pricing/
 │
 ├── data/
-│   ├── rides.csv
+│   ├── cab_rides.csv
 │   └── weather.csv
+│
+├── model/
+│   ├── random_forest_model.pkl
+│   └── label_encoder.pkl
 │
 ├── src/
 │   ├── merge.py  
@@ -23,14 +25,15 @@ Surge-Pricing/
 │
 ├── main.py
 ├── requirements.txt
+└── Dockerfile
 └── README.md
 ```
-Note: The csb_rides.csv file is excluded from this repository due to its large size.
+Note: The cab_rides.csv and label_encoder.pkl file is excluded from this repository due to its large size.
 You can download it separately from this https://drive.google.com/drive/folders/1ci9ndrPcPioSb4NHnaI3Ey7FSz_oq2Yf Drive link.
 
 ---
 
-##  How to Run the Project
+##  How to Run the Project Locally
 
 ### 1.  Install dependencies
 
@@ -40,7 +43,7 @@ Make sure you're using Python 3.8+ and install dependencies with:
 pip install -r requirements.txt
 ```
 
-### 2. 📂 Prepare the data
+### 2.  Prepare the data
 Place your CSV files in the data/ directory:
 
     • data/rides.csv
@@ -64,6 +67,32 @@ This script will:
     • Train a Random Forest classifier.
 
     • Evaluate the model.
+
+##  How to Run the Project using Docker Container
+
+Prerequisites
+    • Docker Desktop or Rancher Desktop installed and running
+
+    • Basic command-line knowledge
+
+Build the Docker Image
+Run this in your project root directory:
+```bash
+docker build -t surge-pricing .
+```
+Run the Dokcer Container
+```bash
+docker run -p 8000:8000 surge-pricing
+```
+
+
+## Testing the Model Locally
+You can test the model locally without Docker by running:
+
+```bash
+python test_model.py
+```
+Make sure model files (random_forest_model.pkl and label_encoder.pkl) are present in the model/ folder.
 
 # Features Used
     • distance

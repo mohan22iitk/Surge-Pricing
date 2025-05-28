@@ -20,3 +20,15 @@ def train_random_forest(x_train, y_train, random_state=42):
     )
     model.fit(x_train, y_train)
     return model
+
+import joblib
+import os
+
+def save_model(model, label_encoder, model_dir='model'):
+    """
+    Saves the trained model and label encoder to .pkl files.
+    """
+    os.makedirs(model_dir, exist_ok=True)
+    joblib.dump(model, f'{model_dir}/random_forest_model.pkl')
+    joblib.dump(label_encoder, f'{model_dir}/label_encoder.pkl')
+
