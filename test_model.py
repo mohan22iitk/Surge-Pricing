@@ -23,9 +23,9 @@ test_input = pd.DataFrame([{
     "temp": 33.0,
     "clouds": 90.0,
     "pressure": 1000.0,
-    "humidity": 95.0,
-    "wind": 25.0,
-    "rain": 1.5
+    "humidity": 0.73,
+    "wind": 11.0,
+    "rain": 0.98
 }])
 
 # Predict and print confidence
