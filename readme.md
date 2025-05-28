@@ -156,7 +156,7 @@ numpy
 Install with:
 
 ```bash
-pip install -r requirements.txtnumpy
+pip install -r requirements.txt
 ```
 
 # Notes
