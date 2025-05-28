@@ -68,6 +68,9 @@ This script will:
 
     • Evaluate the model.
 
+---
+
+
 ##  How to Run the Project using Docker Container
 
 Prerequisites
@@ -85,6 +88,7 @@ Run the Dokcer Container
 docker run -p 8000:8000 surge-pricing
 ```
 
+---
 
 ## Testing the Model Locally
 You can test the model locally without Docker by running:
@@ -93,6 +97,9 @@ You can test the model locally without Docker by running:
 python test_model.py
 ```
 Make sure model files (random_forest_model.pkl and label_encoder.pkl) are present in the model/ folder.
+
+---
+
 
 # Features Used
     • distance
@@ -113,6 +120,9 @@ Make sure model files (random_forest_model.pkl and label_encoder.pkl) are presen
 
     • rain
 
+---
+
+
 # Model Details
  • Model: Random Forest Classifier
 
@@ -129,6 +139,9 @@ Make sure model files (random_forest_model.pkl and label_encoder.pkl) are presen
     • F1 Score
 
     • Confusion Matrix
+
+---
+
 
 # Dependencies
 
