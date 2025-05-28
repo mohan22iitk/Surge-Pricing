@@ -1,26 +1,32 @@
-# Uber Surge Pricing Prediction
+# Surge Pricing Prediction
 
 This project aims to predict surge pricing multipliers for Uber rides using historical ride and weather data. It includes data preprocessing, merging, model training, and evaluation — all organized in a modular Python project.
 
 ---
 
 ## 📁 Project Structure
-Uber-Surge-Pricing/
+
+## Project Structure
+
+```plaintext
+Surge-Pricing/
 │
 ├── data/
-│ ├── rides.csv
-│ └── weather.csv
+│   ├── rides.csv
+│   └── weather.csv
 │
 ├── src/
-│ ├── merge.py # Functions to merge ride and weather data
-│ ├── preprocess.py # Data cleaning, feature extraction, label encoding, train-test split, SMOTE
-│ ├── training.py # Random Forest training
-│ └── testing.py # Evaluation (accuracy, precision, recall, f1-score)
+│   ├── merge.py  
+│   ├── preprocess.py  
+│   ├── training.py  
+│   └── testing.py  
 │
-├── main.py 
-├── requirements.txt 
-└── README.md 
-
+├── main.py
+├── requirements.txt
+└── README.md
+```
+Note: The csb_rides.csv file is excluded from this repository due to its large size.
+You can download it separately from this https://drive.google.com/drive/folders/1ci9ndrPcPioSb4NHnaI3Ey7FSz_oq2Yf Drive link.
 
 ---
 
@@ -32,15 +38,16 @@ Make sure you're using Python 3.8+ and install dependencies with:
 
 ```bash
 pip install -r requirements.txt
+```
 
-2. 📂 Prepare the data
+### 2. 📂 Prepare the data
 Place your CSV files in the data/ directory:
 
-data/rides.csv
+    • data/rides.csv
 
-data/weather.csv
+    • data/weather.csv
 
-3. Run the project
+### 3. Run the project
 
 ```bash
 python main.py data/rides.csv data/weather.csv
