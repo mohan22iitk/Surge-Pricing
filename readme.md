@@ -74,11 +74,12 @@ This script will:
 ##  How to Run the Project using Docker Container
 
 Prerequisites
-    • Docker Desktop or Rancher Desktop installed and running
 
+    • Docker Desktop or Rancher Desktop installed and running
     • Basic command-line knowledge
 
 Build the Docker Image
+
 Run this in your project root directory:
 ```bash
 docker build -t surge-pricing .
