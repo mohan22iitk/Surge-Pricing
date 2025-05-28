@@ -4,6 +4,11 @@ This project aims to predict surge pricing multipliers for Uber rides using hist
 
 ---
 
+<<<<<<< HEAD
+=======
+##  Project Structure
+
+>>>>>>> 8ed01d8b37aa33fd7f7c126e7608e267a59f836c
 ## Project Structure
 
 ```plaintext
