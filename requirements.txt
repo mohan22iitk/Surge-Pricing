@@ -2,5 +2,3 @@ pandas
 scikit-learn
 imblearn
 numpy
-fastapi
-uvicorn
