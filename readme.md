@@ -4,7 +4,7 @@ This project aims to predict surge pricing multipliers for Uber rides using hist
 
 ---
 
-## 📁 Project Structure
+##  Project Structure
 
 ## Project Structure
 
@@ -40,7 +40,7 @@ Make sure you're using Python 3.8+ and install dependencies with:
 pip install -r requirements.txt
 ```
 
-### 2. 📂 Prepare the data
+### 2.  Prepare the data
 Place your CSV files in the data/ directory:
 
     • data/rides.csv
