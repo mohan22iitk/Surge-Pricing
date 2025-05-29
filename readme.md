@@ -9,6 +9,9 @@ This project aims to predict surge pricing multipliers for Uber rides using hist
 ```plaintext
 Surge-Pricing/
 │
+├── app/
+│   └── api.py              
+│
 ├── data/
 │   ├── cab_rides.csv
 │   └── weather.csv
@@ -28,7 +31,7 @@ Surge-Pricing/
 └── Dockerfile
 └── README.md
 ```
-Note: The cab_rides.csv and label_encoder.pkl file is excluded from this repository due to its large size.
+Note: The 'cab_rides.csv' and 'label_encoder.pkl' file is excluded from this repository due to its large size.
 You can download it separately from this https://drive.google.com/drive/folders/1ci9ndrPcPioSb4NHnaI3Ey7FSz_oq2Yf Drive link.
 
 ---
@@ -46,11 +49,12 @@ pip install -r requirements.txt
 ### 2.  Prepare the data
 Place your CSV files in the data/ directory:
 
-    • data/rides.csv
+    • 'data/rides.csv'
 
-    • data/weather.csv
+    • 'data/weather.csv'
 
-### 3. Run the project
+
+### 3. Train the Model
 
 ```bash
 python main.py data/rides.csv data/weather.csv
@@ -69,7 +73,32 @@ This script will:
     • Evaluate the model.
 
 ---
+### Run the FastAPI server locally
 
+    After training the model, run the API:
+    ```bash
+    uvicorn app.api:app --reload
+    ```
+
+## Test the API
+
+    • Open in browser: http://127.0.0.1:8000/docs
+    • Use Swagger UI to test the '/predict' endpoint
+
+    Sample Input (JSON)
+    ```bash
+    {
+        "distance": 3.5,
+        "day": 5,
+        "hour": 18,
+        "temp": 22.5,
+        "clouds": 20,
+        "pressure": 1012,
+        "humidity": 60,
+        "wind": 3.5,
+        "rain": 0.0
+    }
+    ```
 
 ##  How to Run the Project using Docker Container
 
