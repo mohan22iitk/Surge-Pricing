@@ -49,9 +49,9 @@ pip install -r requirements.txt
 ### 2.  Prepare the data
 Place your CSV files in the data/ directory:
 
-    • 'data/rides.csv'
+    • data/rides.csv
 
-    • 'data/weather.csv'
+    • data/weather.csv
 
 
 ### 3. Train the Model
@@ -73,19 +73,19 @@ This script will:
     • Evaluate the model.
 
 ---
-### Run the FastAPI server locally
 
-    After training the model, run the API:
+### Run the FastAPI server locally
+After training the model, run the API:
+
     ```bash
     uvicorn app.api:app --reload
     ```
 
 ## Test the API
+• Open in browser: http://127.0.0.1:8000/docs
+• Use Swagger UI to test the '/predict' endpoint
 
-    • Open in browser: http://127.0.0.1:8000/docs
-    • Use Swagger UI to test the '/predict' endpoint
-
-    Sample Input (JSON)
+Sample Input (JSON)
     ```bash
     {
         "distance": 3.5,
