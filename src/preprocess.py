@@ -42,8 +42,17 @@ def split_and_balance_data(X, y, test_size=0.3, random_state=42):
     """
     Splits data and applies SMOTE to training set.
     """
+   
+    
+    print("Original:", pd.Series(y).value_counts())
+
+
     x_train, x_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=random_state)
     sm = SMOTE(random_state=random_state)
+
+    print("After SMOTE:", pd.Series(y_train).value_counts())
+
+    
     x_train, y_train = sm.fit_resample(x_train, y_train)
     return x_train, x_test, y_train, y_test
 

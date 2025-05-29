@@ -35,3 +35,23 @@ def evaluate_model(model, x_test, y_test, label_encoder):
     errors = abs(y_pred - y_test)
     print('Mean Absolute Error:', round(np.mean(errors), 2))
 
+
+##########################################
+
+
+
+    # --- To extract feature rows where actual=2.0 and predicted=2.0 ---
+    actual_val = 2.0
+    pred_val = 2.0
+
+
+    matching_indices = np.where((y_test_labels == actual_val) & (y_pred_labels == pred_val))[0]
+
+    matching_features = x_test.iloc[matching_indices]
+
+    print(f"\nNumber of test samples where actual={actual_val} and predicted={pred_val}: {len(matching_features)}")
+    print("Sample feature rows for these cases:")
+    print(matching_features.head(5))
+
+    # Save to CSV for further testing
+    matching_features.to_csv("actual2_pred2_features.csv", index=False)

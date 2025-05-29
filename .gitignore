@@ -16,4 +16,5 @@ __pycache__/
 venv/
 env/
 
-api/
+# Ignore files which are used for testing purpose only
+actual2_pred2_features.csv

@@ -7,32 +7,30 @@ Original file is located at
     https://colab.research.google.com/drive/1OR1j000-Lmub__xFl_QgAm0JWfuySbwI
 """
 
-import joblib
 import pandas as pd
 import numpy as np
+from joblib import load
 
-# Load model and encoder
-model = joblib.load("model/random_forest_model.pkl")
-label_encoder = joblib.load("model/label_encoder.pkl")
+# Load saved model, label encoder, etc.
+model = load("model/random_forest_model.pkl")
+le = load("model/label_encoder.pkl")
 
-# Try more extreme or surge-prone values
 test_input = pd.DataFrame([{
-    "distance": 30.0,
-    "day": 5,  # Friday
-    "hour": 19,  # Peak hour
-    "temp": 33.0,
-    "clouds": 90.0,
-    "pressure": 1000.0,
-    "humidity": 0.73,
-    "wind": 11.0,
-    "rain": 0.98
+    "distance": 2.36,
+    "day": 1,       
+    "hour": 3,     
+    "temp": 44.22,
+    "clouds": 1,
+    "pressure": 1000.8,
+    "humidity": 0.9,
+    "wind": 13.62,
+    "rain": 0.145
 }])
 
-# Predict and print confidence
+# Predict and decode
 probs = model.predict_proba(test_input)
-pred_encoded = model.predict(test_input)
-pred_label = label_encoder.inverse_transform(pred_encoded)
+pred = model.predict(test_input)
+decoded = le.inverse_transform(pred)
 
 print("Class Probabilities:", probs)
-print("Predicted surge multiplier:", pred_label[0])
-
+print("Predicted surge multiplier:", decoded)
