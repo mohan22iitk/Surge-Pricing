@@ -26,10 +26,12 @@ Surge-Pricing/
 │   ├── training.py  
 │   └── testing.py  
 │
+├── .gitignore
 ├── main.py
 ├── requirements.txt
-└── Dockerfile
-└── README.md
+├── test_model.py
+├── Dockerfile
+└── readme.md
 ```
 Note: The 'cab_rides.csv' and 'label_encoder.pkl' file is excluded from this repository due to its large size.
 You can download it separately from this https://drive.google.com/drive/folders/1ci9ndrPcPioSb4NHnaI3Ey7FSz_oq2Yf Drive link.
@@ -83,6 +85,7 @@ uvicorn app.api:app --reload
 
 ## Test the API
 • Open in browser: http://127.0.0.1:8000/docs
+
 • Use Swagger UI to test the '/predict' endpoint
 
 Sample Input (JSON)
@@ -180,6 +183,9 @@ pandas
 scikit-learn
 imblearn
 numpy
+fastapi
+uvicorn
+joblib
 ```
 
 Install with:
