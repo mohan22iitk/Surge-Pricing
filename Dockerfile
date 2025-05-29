@@ -1,14 +1,15 @@
-# Use official lightweight Python image
 FROM python:3.11-slim
 
-# Set the working directory inside the container
+
 WORKDIR /app
 
-# Copy everything 
-COPY . .
+COPY requirements.txt .
 
-# Install required dependencies
 RUN pip install --no-cache-dir -r requirements.txt
 
-# Run your test script
-CMD ["python", "test_model.py"]
+COPY . .
+
+EXPOSE 8000
+
+# Run the FastAPI app with uvicorn
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "8000"]
