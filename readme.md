@@ -77,28 +77,28 @@ This script will:
 ### Run the FastAPI server locally
 After training the model, run the API:
 
-    ```bash
-    uvicorn app.api:app --reload
-    ```
+```bash
+uvicorn app.api:app --reload
+```
 
 ## Test the API
 • Open in browser: http://127.0.0.1:8000/docs
 • Use Swagger UI to test the '/predict' endpoint
 
 Sample Input (JSON)
-    ```bash
-    {
-        "distance": 3.5,
-        "day": 5,
-        "hour": 18,
-        "temp": 22.5,
-        "clouds": 20,
-        "pressure": 1012,
-        "humidity": 60,
-        "wind": 3.5,
-        "rain": 0.0
-    }
-    ```
+```bash
+{
+    "distance": 3.5,
+    "day": 5,
+    "hour": 18,
+    "temp": 22.5,
+    "clouds": 20,
+    "pressure": 1012,
+    "humidity": 60,
+    "wind": 3.5,
+    "rain": 0.0
+}
+```
 
 ##  How to Run the Project using Docker Container
 
