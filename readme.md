@@ -1,6 +1,6 @@
 # Surge Pricing Prediction
 
-This project aims to predict surge pricing multipliers for Uber rides using historical ride and weather data. It includes data preprocessing, merging, model training, and evaluation — all organized in a modular Python project.
+This project aims to predict surge pricing multipliers for cab rides using historical ride and weather data. It includes data preprocessing, merging, model training, and evaluation — all organized in a modular Python project.
 
 ---
 
